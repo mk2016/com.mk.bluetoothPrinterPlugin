@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugins-bluetoothPrinter",
+  "version": "1.0.0",
+  "description": "cordova bluetooth printer plugin",
+  "cordova": {
+    "id": "cordova-plugins-bluetoothPrinter",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mk2016/com.mk.bluetoothPrinterPlugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova",
+    "cordova-ios"
+  ],
+  "author": "mk",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/mk2016/com.mk.bluetoothPrinterPlugin/issues"
+  },
+  "homepage": "https://github.com/mk2016/com.mk.bluetoothPrinterPlugin#readme"
+}
