@@ -1,6 +1,6 @@
 var exec = require("cordova/exec");
 
-function BluetoothPrinter(){};
+var BluetoothPrinter = function() {};  
 
 //开始扫描设备
 BluetoothPrinter.prototype.scanForPeripherals = function(success, fail, keep){
@@ -37,7 +37,6 @@ BluetoothPrinter.prototype.printOCLog = function(success, fail, message){
     exec(success, fail, 'MKBluetoothPrinter', 'printLog', [message]);
 }
 
-
-var printerHelper = new BluetoothPrinter();
+var printerHelper = new BluetoothPrinter();  
 module.exports = printerHelper;
 
