@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://phonegap.com/ns/plugins/1.0" 
         id="cordova-plugin-bluetooth-printer" 
-        version="1.0.0">
-     <engines>
+        version="1.0.1">
+    <engines>
         <engine name="cordova" version=">=7.0.1" />
     </engines>
 
     <name>BluetoothPrinter</name>
-    <description>Bluetooth Printer Plugin</description>
-    <license>MIT</license>
+    <description>Cordova Bluetooth Printer Plugin</description>
 
     <js-module name="printerHelper" src="www/BluetoothPrinter.js">
         <clobbers target="BluetoothPrinter" />
@@ -16,7 +15,6 @@
 
     <!-- ios -->
     <platform name="ios">
- 
         <header-file src="src/ios/HLBluetooth/HLBLEConst.h" />
         <source-file src="src/ios/HLBluetooth/HLBLEManager.m" />
         <header-file src="src/ios/HLBluetooth/HLBLEManager.h" />
