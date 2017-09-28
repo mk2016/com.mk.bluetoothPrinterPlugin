@@ -3,6 +3,20 @@ var exec = require("cordova/exec");
 function BluetoothPrinter(){};
 
 /*
+ * 设置打印机宽度
+ */
+ BluetoothPrinter.prototype.setPrinterPageWidth = function(success, fail, width){
+    exec(success, fail, 'MKBluetoothPrinter', 'setPrinterPageWidth',[width]);
+ }
+
+/*
+ * 获取当前设置的纸张宽度
+ */
+BluetoothPrinter.prototype.getCurrentSetPageWidth = function(success, fail){
+    exec(success, fail, 'MKBluetoothPrinter', 'getCurrentSetPageWidth');
+}
+
+/*
  * 自动连接 历史连接过的设备
  */
 BluetoothPrinter.prototype.autoConnectPeripheral = function(success, fail){
@@ -88,6 +102,7 @@ if (typeof BTPInfoType == "undefined"){
     BTPInfoType.seperatorLine   = 5;
     BTPInfoType.spaceLine       = 6;
     BTPInfoType.footer          = 7;
+    BTPInfoType.cutpage         = 8;
 }
 //  字号大小 default:smalle
 if (typeof BTPFontType == "undefined"){
@@ -215,6 +230,12 @@ PrinterInfoHelper.prototype.appendSpaceLine = function(){
     _printerInfos.push(infoModel);
 }
 
+//切纸
+PrinterInfoHelper.prototype.appendCutpage = function(){
+    var infoModel = new Object();
+    infoModel.infoType = BTPInfoType.cutpage;
+    _printerInfos.push(infoModel);
+}
 
 PrinterInfoHelper.prototype.appendFooter = function(text){
     var infoModel = new Object();
@@ -226,6 +247,7 @@ PrinterInfoHelper.prototype.appendFooter = function(text){
 // 获取打印信息的 json 字符串
 PrinterInfoHelper.prototype.getPrinterInfoJsonString = function(){
     var jsonStr = JSON.stringify(_printerInfos);
+    _printerInfos = [];
     return jsonStr;
 }
 
